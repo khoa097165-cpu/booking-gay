@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <title>BooKing Gay</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="shell nav">
+    <a class="brand" href="#home">BOOKING GAY</a>
+    <nav><a href="#discover">Khám phá</a><a href="#how">Cách hoạt động</a><a href="#safety">An toàn</a></nav>
+    <div class="actions"><button class="btn ghost" id="accountBtn">Đăng nhập</button></div>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero shell">
+    <div class="hero-copy">
+      <div class="eyebrow"></div>
+      <h1>Gay phù hợp<br><span>Tư Thế Đáng Nhớ</span></h1>
+      <div class="hero-actions"><a class="btn big" href="#discover">Khám phá Gay</a><a class="btn ghost big" href="#how">Xem cách hoạt động</a></div>
+      <div class="trust"><div><b>18+</b><small>Người dùng trưởng thành</small></div><div><b>Verified</b><small>Hồ sơ có xác minh</small></div><div><b>Booking</b><small>Theo dõi trạng thái rõ ràng</small></div></div>
+    </div>
+    <aside class="spotlight">
+      <div class="spot-img"><div class="monogram">LT</div><span class="verified">✓ VERIFIED</span></div>
+      <div class="spot-copy"><small>CURATED TALENT</small><h2>Đặt lịch nhanh, quản lý rõ ràng.</h2><p>Khách tạo booking, talent xử lý lịch được giao, admin quản trị toàn bộ hệ thống.</p></div>
+    </aside>
+  </section>
+
+  <section class="section shell" id="discover">
+    <div class="section-head"><div><div class="eyebrow">DISCOVER</div><h2>Talent nổi bật</h2><p>Hồ sơ được lấy trực tiếp từ MongoDB.</p></div><span class="count" id="talentCount"></span></div>
+    <div class="talent-grid" id="talents"></div>
+  </section>
+
+  <section class="band" id="how"><div class="shell"><div class="section-head light"><div><div class="eyebrow">HOW IT WORKS</div><h2>Ba bước để bắt đầu</h2></div></div><div class="steps"><article><b>01</b><h3>Chọn talent</h3><p>Xem hồ sơ, khu vực hoạt động và mức phí theo ca.</p></article><article><b>02</b><h3>Gửi yêu cầu</h3><p>Nhập thời gian, địa điểm và brief cho sự kiện.</p></article><article><b>03</b><h3>Theo dõi booking</h3><p>Talent xác nhận lịch, khách theo dõi trạng thái trong dashboard.</p></article></div></div></section>
+
+  <section class="section shell split" id="safety"><div><div class="eyebrow">TRUST & SAFETY</div><h2>Thiết kế cho dịch vụ sự kiện hợp pháp.</h2><p class="lead small">Luna Talent chỉ hỗ trợ hostess, event talent và social companion cho hoạt động hợp pháp. Không hỗ trợ dịch vụ tình dục hoặc hoạt động bất hợp pháp.</p></div><div class="safety-grid"><article><b>01</b><h3>Phân quyền</h3><p>Admin, nhân viên/talent và khách hàng có dashboard riêng.</p></article><article><b>02</b><h3>Xác minh</h3><p>Trạng thái verified và published hiển thị rõ trên hồ sơ.</p></article><article><b>03</b><h3>Booking có trạng thái</h3><p>Pending, confirmed và declined được quản lý trong hệ thống.</p></article><article><b>04</b><h3>MongoDB</h3><p>Tài khoản, talent và booking được lưu trên database thật.</p></article></div></section>
+</main>
+
+<footer><div class="shell foot"><div><a class="brand" href="#home">LUNA <i>TALENT</i></a><p>Event talent marketplace.</p ></div><div><b>Khám phá</b><a href="#discover">Talent</a><a href="#how">Cách hoạt động</a></div><div><b>An toàn</b><a href="#safety">Trust & Safety</a></div><div><b>Tài khoản</b><button id="footerAccount">Đăng nhập / Dashboard</button></div></div><div class="shell copyright">© 2026 Luna Talent. Demo marketplace.</div></footer>
+
+<div class="modal" id="authModal"><div class="modal-box compact"><button class="x" data-close="authModal">×</button><div class="eyebrow">WELCOME BACK</div><h2>Đăng nhập</h2><p class="muted">Đăng nhập để mở dashboard theo quyền của tài khoản.</p><form id="loginForm" class="form one"><label>Tên đăng nhập<input id="username" type="text" autocomplete="username" required></label><label>Mật khẩu<input id="password" type="password" autocomplete="current-password" required></label><button class="btn full">Đăng nhập</button></form><div class="notice"><b></b><br><br><br></div></div></div>
+
+<div class="modal" id="bookingModal"><div class="modal-box"><button class="x" data-close="bookingModal">×</button><div class="eyebrow">NEW BOOKING</div><h2>Tạo yêu cầu booking</h2><form id="bookingForm" class="form"><input id="bookingTalent" type="hidden"><label>Loại sự kiện<input id="eventType" required placeholder="Corporate Event"></label><label>Ngày<input id="eventDate" type="date" required></label><label>Giờ<input id="startTime" type="time" required></label><label>Thời lượng (giờ)<input id="durationHours" type="number" min="1" max="12" value="4" required></label><label class="full">Địa điểm<input id="venue" required placeholder="Quận 1, TP.HCM"></label><label class="full">Brief<textarea id="brief" rows="4" required placeholder="Mô tả ngắn về sự kiện và yêu cầu..."></textarea></label><button class="btn full">Gửi booking</button></form></div></div>
+
+<div class="dashboard" id="dashboard">
+  <aside class="dash-sidebar">
+    <div><a class="brand" href="#" id="dashHome">LUNA <i>TALENT</i></a><div class="dash-user"><div class="avatar" id="dashAvatar">L</div><div><b id="dashName">User</b><small id="dashRole">Role</small></div></div><nav class="dash-nav" id="dashNav"></nav></div>
+    <button class="btn ghost full" id="logoutBtn">Đăng xuất</button>
+  </aside>
+  <section class="dash-main"><div class="dash-top"><div><div class="eyebrow" id="dashEyebrow">DASHBOARD</div><h1 id="dashTitle">Tổng quan</h1></div><button class="mobile-close" id="closeDashboard">×</button></div><div id="dashContent"></div></section>
+</div>
+
+
+<div class="modal" id="talentPhotoModal"><div class="modal-box compact"><button class="x" data-close="talentPhotoModal">×</button><div class="eyebrow">ADMIN · PHOTO</div><h2>Thay ảnh Talent</h2><p class="muted" id="editTalentPhotoName"></p><form id="talentPhotoForm" class="form one"><input id="editTalentPhotoId" type="hidden"><label>Ảnh mới<input id="editTalentPhoto" type="file" accept="image/jpeg,image/png,image/webp" required></label><div id="editTalentPhotoPreviewWrap" style="display:none"><img id="editTalentPhotoPreview" alt="Xem trước ảnh" style="width:160px;height:200px;object-fit:cover;border-radius:18px"></div><button class="btn full" type="submit">Upload & cập nhật ảnh</button></form></div></div>
+
+<div class="modal" id="talentModal"><div class="modal-box"><button class="x" data-close="talentModal">×</button><div class="eyebrow">ADMIN · TALENT</div><h2>Thêm Talent</h2><p class="muted">Tạo đồng thời tài khoản nhân viên và hồ sơ talent.</p><form id="talentForm" class="form"><label>Họ tên<input id="talentName" required placeholder="Nguyễn Mai Anh"></label><label>Tên đăng nhập<input id="talentUsername" required placeholder="maianh"></label><label>Mật khẩu<input id="talentPassword" type="password" required placeholder="Mật khẩu"></label><label>Email<input id="talentEmail" type="email" placeholder="talent@example.com"></label><label>Số điện thoại<input id="talentPhone" placeholder="0900000000"></label><label>Tên hiển thị<input id="talentDisplayName" required placeholder="Mai Anh"></label><label>Thành phố<input id="talentCity" required value="TP.HCM"></label><label>Giá / ca<input id="talentRate" type="number" min="0" required value="2500000"></label><label class="full">Vai trò<input id="talentRoles" placeholder="Hostess, Event Talent"></label><label class="full">Kỹ năng<input id="talentSkills" placeholder="Giao tiếp, MC, tiếng Anh"></label><label class="full">Ảnh Talent<input id="talentPhoto" type="file" accept="image/jpeg,image/png,image/webp" required></label><div class="full" id="talentPhotoPreviewWrap" style="display:none"><img id="talentPhotoPreview" alt="Xem trước ảnh" style="width:160px;height:200px;object-fit:cover;border-radius:18px"></div><label class="full">Mô tả<textarea id="talentBio" rows="4" placeholder="Giới thiệu talent..."></textarea></label><label class="check"><input id="talentVerified" type="checkbox"> Đã xác minh</label><label class="check"><input id="talentPublished" type="checkbox" checked> Hiển thị ngoài trang chủ</label><button class="btn full" type="submit">Tạo Talent</button></form></div></div>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
